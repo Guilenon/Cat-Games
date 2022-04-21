@@ -42,6 +42,7 @@ export default class App extends Component {
     });
   }
 
+  //methode permettant de Trier les articles
   sortArticle = (order) => {
     this.setState({ order: order });
     let articlesClone = this.state.articles
