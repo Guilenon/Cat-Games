@@ -11,8 +11,8 @@ export default class ArticleCard extends Component {
     return str.length > 50 ? str.substring(0, 50) + "..." : str;
   }
   render() {
-    const {article, handleclickModif,handleclickViewMore} = this.props
-    const date = article.created_at.seconds ? article.created_at.toDate().toLocaleDateString() :  article.created_at.toLocaleDateString();
+    const { article, handleclickModif, handleclickViewMore } = this.props
+    const date = article.created_at.seconds ? article.created_at.toDate().toLocaleDateString() : article.created_at.toLocaleDateString();
     return (
       <Card
         hoverable
@@ -43,7 +43,7 @@ export default class ArticleCard extends Component {
           title="Ce Bouton permet de voir le contenue de l'article"
           handleclick={handleclickViewMore}
         />
-        <br/>
+        <br />
         <Meta description={"Le " + date} />
       </Card>
     )

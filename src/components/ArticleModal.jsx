@@ -8,13 +8,13 @@ export default class ArticleModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      created_at:props.article.id === undefined ? "" : props.article.created_at,
+      created_at: props.article.id === undefined ? "" : props.article.created_at,
       title: props.article.id === undefined ? "" : props.article.title,
       content: props.article.id === undefined ? "" : props.article.content,
       img: props.article.id === undefined ? "" : props.article.img
     }
   }
-
+  //Ajout de l'article en BDD
   handleArticleAdd = () => {
     const NewArticle = {
       created_at: new Date(),
@@ -33,7 +33,7 @@ export default class ArticleModal extends Component {
     })
     this.props.handleCancel()
   };
-
+  //Modification de l'article en BDD
   handleArticleUpdate = () => {
     //console.log(this.state)
     const NewArticle = this.props.article
@@ -50,7 +50,7 @@ export default class ArticleModal extends Component {
     })
     this.props.handleCancel()
   };
-
+  //Changer le state quand il y a modification dans le form
   handleChange = (e) => {
     //console.log(e)
     if (e.target.name === 'title') {

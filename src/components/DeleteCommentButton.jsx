@@ -5,7 +5,7 @@ import { DeleteOutlined } from '@ant-design/icons';
 
 export default class DeleteCommentButton extends Component {
 
-
+    //Supression du commentaire
     handleCommentDelete = () => {
         const NewComment = this.props.article
         for (var i = 0; i < NewComment.comments.length; i++) {

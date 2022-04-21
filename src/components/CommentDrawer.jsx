@@ -14,7 +14,7 @@ export default class CommentDrawer extends Component {
             created_at: ""
         }
     }
-
+    //Trie des articles par date
     sortArticle = () => {
         this.props.article.comments.sort(function (article1, article2) {
             if (article1.created_at < article2.created_at) return -1;
@@ -22,14 +22,15 @@ export default class CommentDrawer extends Component {
             return 0;
         })
     }
-
+    //Trie au lancement du drawer
     componentDidMount() {
         this.sortArticle();
     }
+    //Trie a chaque changement
     componentWillUpdate() {
         this.sortArticle();
     }
-
+    //Ajout de commmentaire
     handleCommentAdd = () => {
         const dateCrea = this.state.created_at === "" ? new Date() : this.state.created_at
         const NewComment = this.props.article
@@ -41,11 +42,11 @@ export default class CommentDrawer extends Component {
                 this.setState({ error: error });
             } else {
                 firebase.updateArticle(NewComment)
-                this.setState({ author: "", content: "", created_at: ""})
+                this.setState({ author: "", content: "", created_at: "" })
             }
         })
     };
-
+    //Changement des states pour le comment avec le form
     handleChange = (e) => {
         if (e.target.name === 'author') {
             this.setState({ author: e.target.value })

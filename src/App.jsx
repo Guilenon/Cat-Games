@@ -3,7 +3,7 @@ import logo from './logo.png';
 import './App.css';
 import AddButton from './components/AddButton';
 import ArticleModal from './components/ArticleModal';
-import { Layout, Menu, Spin} from 'antd';
+import { Layout, Menu, Spin } from 'antd';
 import ArticleCard from './components/ArticleCard';
 import Fire from './Fire';
 import ArticleViewMoreModal from './components/ArticleViewMoreModal';
@@ -25,6 +25,7 @@ export default class App extends Component {
     }
   }
 
+  //Lancé a l'initialisation du projet pour récuperer les articles de la BDD
   componentDidMount() {
     const firebase = new Fire(error => {
       if (error) {
@@ -64,7 +65,7 @@ export default class App extends Component {
   render() {
     return (
       <Layout className="layout">
-
+        {/* Entête de la page  */}
         <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
           <Menu theme={this.state.theme} mode="horizontal">
             <Menu.Item key="logo" disabled>
@@ -88,9 +89,8 @@ export default class App extends Component {
               />
             </Menu.Item>
           </Menu>
-
         </Header>
-
+        {/* Contenue de la page  */}
         <Content style={{ padding: '50px', marginTop: '50px' }}>
           <div className="site-layout-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             {this.state.isArticleModalVisible &&
@@ -117,9 +117,8 @@ export default class App extends Component {
             </div>
           </div >
         </Content>
-
+        {/* Bas de la page  */}
         <Footer style={{ textAlign: 'center', position: 'bottom' }}> ©2022 Created by Guillaume Blanchefort</Footer>
-
       </Layout>
     );
   }

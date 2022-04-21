@@ -4,6 +4,7 @@ import { Tooltip, Button } from 'antd';
 import { EditOutlined } from '@ant-design/icons';
 export default class UpdateCommentButton extends Component {
 
+
   handleCommentDelete = () => {
     const NewComment = this.props.article
     for (var i = 0; i < NewComment.comments.length; i++) {
@@ -29,7 +30,7 @@ export default class UpdateCommentButton extends Component {
   };
 
   render() {
-    const { size, shape,title } = this.props;
+    const { size, shape, title } = this.props;
     return (
       <div>
         <a href="#anchor">

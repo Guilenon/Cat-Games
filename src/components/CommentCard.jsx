@@ -6,7 +6,7 @@ import UpdateCommentButton from './UpdateCommentButton';
 export default class CommentCard extends Component {
   render() {
     const { author, content, article, commentaire, dateCreation } = this.props;
-    const date = dateCreation.seconds ? dateCreation.toDate().toLocaleString() :  dateCreation.toLocaleString();  
+    const date = dateCreation.seconds ? dateCreation.toDate().toLocaleString() : dateCreation.toLocaleString();
     return (
 
       <Comment

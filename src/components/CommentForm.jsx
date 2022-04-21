@@ -6,7 +6,7 @@ const { TextArea } = Input;
 export default class CommentForm extends Component {
 
     render() {
-        const { author, content, handleChange, handleClick,date } = this.props;
+        const { author, content, handleChange, handleClick, date } = this.props;
         //console.log(this.props)
         return (
             <Comment id="anchor"
